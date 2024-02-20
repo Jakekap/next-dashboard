@@ -7,6 +7,10 @@ const nextConfig = {
         protocol: "https",
         hostname: "cdn.autobild.es",
       },
+      {
+        protocol: "https",
+        hostname: "rickandmortyapi.com",
+      },
     ],
   },
 };
