@@ -8,7 +8,7 @@ import { toggleFavorite } from "@/src/store/pokemons/pokemons";
 
 export const PokemonCard = (pokemon: SimplePokemon) => {
   const { id, name } = pokemon;
-  const isFavorite = useAppSelector((state) => !!state.pokemons[id]);
+  const isFavorite = useAppSelector((state) => !!state.pokemons.favorites[id]);
   const dispatch = useAppDispatch();
 
   const onToggle = () => {
