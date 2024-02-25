@@ -9,7 +9,7 @@ const nextConfig = {
       },
       {
         protocol: "https",
-        hostname: "rickandmortyapi.com",
+        hostname: "raw.githubusercontent.com",
       },
     ],
   },

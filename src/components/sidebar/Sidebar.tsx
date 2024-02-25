@@ -1,7 +1,9 @@
 import Image from "next/image";
-import { TbCategory2, TbDatabasePlus } from "react-icons/tb";
+import { TbCategory2 } from "react-icons/tb";
+import { BsCalculator } from "react-icons/bs";
 import { SidebarMenuItem } from "./SidebarMenuItem";
-import { PiAlienBold } from "react-icons/pi";
+import { PiCat } from "react-icons/pi";
+import { FaRegHeart } from "react-icons/fa";
 
 const menuItems = [
   {
@@ -12,15 +14,21 @@ const menuItems = [
   },
   {
     path: "/dashboard/counter",
-    icon: <TbDatabasePlus size={32} />,
+    icon: <BsCalculator size={32} />,
     title: "Counter",
     subtitle: "Contador local",
   },
   {
-    path: "/dashboard/rick-n-morty",
-    icon: <PiAlienBold size={32} />,
-    title: "Rick & Morty",
+    path: "/dashboard/pokemons",
+    icon: <PiCat size={32} />,
+    title: "Pokémon",
     subtitle: "Gen Estática",
+  },
+  {
+    path: "/dashboard/favorites",
+    icon: <FaRegHeart size={32} />,
+    title: "Favorite Pokémons",
+    subtitle: "Global State",
   },
 ];
 
