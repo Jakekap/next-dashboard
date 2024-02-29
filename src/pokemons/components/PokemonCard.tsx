@@ -22,7 +22,7 @@ export const PokemonCard = (pokemon: SimplePokemon) => {
           src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/${id}.svg`}
           width={100}
           height={100}
-          alt={name}
+          alt={name || "Pokemon"}
           priority={false}
         />
         <p className="pt-2 text-lg font-semibold text-gray-50 capitalize">

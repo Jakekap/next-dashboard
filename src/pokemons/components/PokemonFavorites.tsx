@@ -1,21 +1,32 @@
 "use client";
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import { useAppSelector } from "@/src/store";
-import { PokemonsGrid } from "@/src/pokemons";
+import { PokemonsGrid, SimplePokemon } from "@/src/pokemons";
 import { FaRegHeart } from "react-icons/fa";
 
 export const PokemonFavorites = () => {
-  const favorites = useAppSelector((state) =>
-    Object.values(state.pokemons.favorites)
+  const favorites = useAppSelector((state) => state.pokemons.favorites);
+  const [pokemons, setPokemons] = useState<SimplePokemon[]>(
+    Object.values(favorites)
   );
-  //const [pokemons, setPokemons] = useState(favorites);
+
+  const isLoad = useRef<boolean>(false);
+
+  useEffect(() => {
+    if (isLoad.current === false && Object.values(favorites).length !== 0) {
+      setPokemons(Object.values(favorites));
+      isLoad.current = true;
+    }
+  }, [favorites]);
+
+  console.log(pokemons, "pokemons");
 
   return (
     <>
-      {favorites.length === 0 ? (
+      {pokemons.length === 0 ? (
         <NoFavorites />
       ) : (
-        <PokemonsGrid pokemons={favorites} />
+        <PokemonsGrid pokemons={pokemons} />
       )}
     </>
   );

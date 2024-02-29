@@ -8,8 +8,8 @@ interface Props {
 export const PokemonsGrid = ({ pokemons }: Props) => {
   return (
     <div className="flex flex-wrap gap-10 items-center justify-center">
-      {pokemons.map((pokemon) => (
-        <div key={pokemon.id} className="flex flex-col items-center">
+      {pokemons.map((pokemon, index) => (
+        <div key={index} className="flex flex-col items-center">
           <PokemonCard {...pokemon} />
         </div>
       ))}
